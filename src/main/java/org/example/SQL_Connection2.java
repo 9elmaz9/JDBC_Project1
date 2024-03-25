@@ -39,19 +39,17 @@ public class SQL_Connection2 {
             // STAP 03: Een insert query uitvoeren
             Statement insertStatement = connection.createStatement();
 
-            String insertQuery = "INSERT INTO beers (Name, BrewerId, CategoryId, Price, Stock, Alcohol) " +
-                    "VALUES ('Stella Artois', 1, 1, 2.50, 100, 5.0)";
 
-            int rowsAffected = insertStatement.executeUpdate(insertQuery);
-
-            if (rowsAffected > 0) {
-                System.out.println("INSERT SUCCESSFUL: " + rowsAffected + " row(s) inserted.");
-            } else {
-                System.out.println("INSERT FAILED: No rows inserted.");
-            }
-
-            // Sluit de verbinding
-            connection.close();
+          String insertQuery = "INSERT INTO beers (Name, BrewerId, CategoryId, Price, Stock, Alcohol) " +
+                  "VALUES ('Stella Artois', 1, 1, 2.50, 100, 5.0)";
+        int rowsAffected = insertStatement.executeUpdate(insertQuery);
+        if (rowsAffected > 0) {
+            System.out.println("INSERT SUCCESSFUL: " + rowsAffected + " row(s) inserted.");
+        } else {
+            System.out.println("INSERT FAILED: No rows inserted.");
+        }
+        // Sluit de verbinding
+        connection.close();
 
 // STAP 04: Een update query uitvoeren
             Statement updateStatement = connection.createStatement();
@@ -99,3 +97,26 @@ public class SQL_Connection2 {
         }
     }
 }
+
+
+
+
+
+
+//////// DEZE WERK , HOOFD
+// Statement insertStatement = connection.createStatement();
+//            //insertStatement.execute("insert into beers (name,brewerid,categoryid,price,stock,alcohol) values ('jupiler',17,33,50,100,7)");
+//
+//            Statement updateStatement = connection.createStatement();
+//            //updateStatement.executeUpdate("update beers set name='jupiler goed' where id=1557") ;
+//
+//            Statement deleteStatement = connection.createStatement();
+//            updateStatement.execute("delete from beers where name='jupiler goed'") ;
+//
+//
+//        } catch (SQLException sqlException) {
+//            System.out.println(sqlException.getMessage());
+//        }
+//
+//    }
+//}
